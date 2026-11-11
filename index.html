@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Vitality Surgery Pages</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#131313;--paper:#F3F2F2;--accent:#FF5B2A;--line:rgba(19,19,19,.12)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,system-ui,sans-serif}
+.top{display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:16px;padding:24px 28px 16px}
+h1{font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:28px;letter-spacing:-.02em;margin:0}
+.top p{margin:6px 0 0;font-size:14px;color:#555;max-width:680px}
+.top p a{color:var(--ink)}
+.ctl{display:flex;flex-wrap:wrap;gap:10px}
+.tabs{display:flex;gap:6px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px}
+.tabs button{border:0;background:transparent;font:600 14px Inter;padding:9px 16px;border-radius:999px;cursor:pointer;color:var(--ink)}
+.tabs button.on{background:var(--ink);color:#fff}
+.tabs button:disabled{color:#aaa;cursor:not-allowed}
+.stage{display:grid;grid-template-columns:1fr 430px;gap:28px;padding:8px 28px 40px;align-items:start}
+.stage.d{grid-template-columns:1fr}
+.stage.m{grid-template-columns:430px;justify-content:center}
+.stage.d .mob,.stage.m .desk{display:none}
+.label{font:600 12px Inter;text-transform:uppercase;letter-spacing:.06em;color:#666;margin:0 0 10px}
+.dframe{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 18px 50px rgba(19,19,19,.08)}
+.bar{height:30px;display:flex;align-items:center;gap:6px;padding:0 12px;border-bottom:1px solid var(--line);background:#fafafa}
+.bar i{width:9px;height:9px;border-radius:50%;background:#ddd}
+.dwrap{position:relative;overflow:hidden}
+.dwrap iframe{position:absolute;top:0;left:0;width:1440px;height:900px;border:0;transform-origin:0 0}
+.phone{width:430px;background:#111;border-radius:48px;padding:20px;box-shadow:0 18px 50px rgba(19,19,19,.18)}
+.phone iframe{display:block;width:390px;height:844px;border:0;border-radius:30px;background:#fff}
+@media (max-width:1100px){.stage{grid-template-columns:1fr}.mob{justify-self:center}}
+@media (max-width:480px){.top,.stage{padding-left:16px;padding-right:16px}.phone{width:100%;padding:12px;border-radius:36px}.phone iframe{width:100%}}
+</style>
+</head>
+<body>
+<div class="top">
+  <div>
+    <h1>Vitality surgery landing pages</h1>
+    <p>Desktop at 1440 and mobile at 390, in the live /vt-expert-care page's design. The survey shows a static first question here; the real survey loads on the live page. Patient videos are placeholders until the edited clips and releases are ready. <a id="open" href="version-a.html" target="_blank" rel="noopener">Open the page on its own</a> · <a id="notes" href="version-a.html?notes=1" target="_blank" rel="noopener">with build notes</a></p>
+  </div>
+  <div class="ctl">
+    <div class="tabs" id="pages" role="tablist">
+      <button class="on" data-p="version-a.html">Meta A</button><button disabled title="Next">Meta B</button><button disabled title="After B">Google</button>
+    </div>
+    <div class="tabs" id="views" role="tablist">
+      <button class="on" data-v="">Both</button><button data-v="d">Desktop</button><button data-v="m">Mobile</button>
+    </div>
+  </div>
+</div>
+<div class="stage" id="stage">
+  <div class="desk">
+    <p class="label">Desktop · 1440</p>
+    <div class="dframe"><div class="bar"><i></i><i></i><i></i></div><div class="dwrap" id="dwrap"><iframe id="dfr" src="version-a.html" title="Desktop layout"></iframe></div></div>
+  </div>
+  <div class="mob">
+    <p class="label">Mobile · 390</p>
+    <div class="phone"><iframe id="mfr" src="version-a.html" title="Mobile layout"></iframe></div>
+  </div>
+</div>
+<script>
+const stage=document.getElementById('stage'),wrap=document.getElementById('dwrap'),fr=document.getElementById('dfr'),mfr=document.getElementById('mfr');
+function fit(){const s=Math.min(1,wrap.clientWidth/1440);fr.style.transform='scale('+s+')';wrap.style.height=(900*s)+'px';}
+new ResizeObserver(fit).observe(wrap);fit();
+document.querySelectorAll('#views button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#views button').forEach(x=>x.classList.toggle('on',x===b));
+  stage.className='stage'+(b.dataset.v?' '+b.dataset.v:'');requestAnimationFrame(fit);
+});
+document.querySelectorAll('#pages button[data-p]').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#pages button').forEach(x=>x.classList.toggle('on',x===b));
+  fr.src=mfr.src=b.dataset.p;document.getElementById('open').href=b.dataset.p;document.getElementById('notes').href=b.dataset.p+'?notes=1';
+});
+</script>
+</body>
+</html>
