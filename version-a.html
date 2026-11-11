@@ -331,7 +331,6 @@
 /* ---- layout fixes from the version A cold read (2026-11-11) ---- */
 /* 1, 2: nearest-survey buttons; the phone sticky bar waits until the hero survey has scrolled away */
 .vt2 #start{scroll-margin-top:88px}
-.vt2 .mbar.pre{display:none!important}
 /* 3: the three ticks sit above the hero survey on phones and tablets */
 .vt2 .trust-m{display:none}
 /* 4: phone reviews stack, three first */
@@ -506,7 +505,7 @@
 <p style="margin-top:10px">Individual results vary and are not guaranteed. This page is general education, not medical advice, a diagnosis or a treatment recommendation. Orthopedic and regenerative treatments carry risks and benefits to discuss with a licensed physician. Candidacy is decided only after an in-person evaluation.</p>
 <p style="margin-top:10px">© 2026 Vitality Orthopedics &amp; Biologics, PLLC</p>
 </div></div></footer>
-<div class="mbar pre"><a class="btn btn-full" href="#check" data-nearest>See if you’re a fit</a></div>
+<div class="mbar"><a class="btn btn-full" href="#check" data-nearest>See if you’re a fit</a></div>
 </div>
 <script>window.VT2={"page": "surgery-a", "door": "2", "seg": {"default": {"pre": "Has a doctor recommended knee or shoulder surgery?", "finalH": "Get your price and your recovery plan before you decide."}, "knee": {"pre": "Has a doctor recommended knee surgery?", "finalH": "Get your price and your recovery plan before you decide."}, "shoulder": {"pre": "Has a doctor recommended shoulder surgery?", "finalH": "Get your price and your recovery plan before you decide."}}, "video": {"url": "https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedc5a8fb31f444f26ce52f.mp4", "poster": "https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedd7398c8c37bd905657d2.jpg", "still": "https://www.vitalityorthopedics.com/wp-content/uploads/2026/05/Dr.-Connor-Ziegler.jpg"}};</script><script>/* Vitality two-door funnel · shared page script. Each page sets window.VT2 = {...} before this runs. */
 (function () {
@@ -742,15 +741,6 @@
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
-
-  /* phone sticky bar appears only once the hero survey has scrolled away */
-  var mbar = $('.mbar');
-  if (mbar && start) {
-    var sync = function () { mbar.classList.toggle('pre', start.getBoundingClientRect().bottom > 0); };
-    window.addEventListener('scroll', sync, { passive: true });
-    window.addEventListener('resize', sync);
-    sync();
-  }
 
   /* phone: three written reviews stacked, the rest behind "Show more reviews"; a filter tab opens them all */
   var bento = $('.bento'), more = $('[data-more-rv]');
