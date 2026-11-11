@@ -39,11 +39,11 @@ h1{font-family:"Inter Tight",Inter,sans-serif;font-weight:800;font-size:28px;let
 <div class="top">
   <div>
     <h1>Vitality surgery landing pages</h1>
-    <p>Desktop at 1440 and mobile at 390, in the live /vt-expert-care page's design. The survey shows a static first question here; the real survey loads on the live page. Patient videos are placeholders until the edited clips and releases are ready. <a id="open" href="version-a.html" target="_blank" rel="noopener">Open the page on its own</a> · <a id="notes" href="version-a.html?notes=1" target="_blank" rel="noopener">with build notes</a></p>
+    <p>Desktop at 1440 and mobile at 390, in the live /vt-expert-care page's design. The survey shows a static first question here; the real survey loads on the live page. Patient videos are placeholders until the edited clips and releases are ready. This build is the layout reference for every surgery page, Meta and Google; the layout and build notes sit under the page. <a id="open" href="version-a.html" target="_blank" rel="noopener">Open the page on its own</a></p>
   </div>
   <div class="ctl">
     <div class="tabs" id="pages" role="tablist">
-      <button class="on" data-p="version-a.html">Meta A</button><button disabled title="Next">Meta B</button><button disabled title="After B">Google</button>
+      <button class="on" data-p="version-a.html">Version A</button>
     </div>
     <div class="tabs" id="views" role="tablist">
       <button class="on" data-v="">Both</button><button data-v="d">Desktop</button><button data-v="m">Mobile</button>
@@ -70,7 +70,7 @@ document.querySelectorAll('#views button').forEach(b=>b.onclick=()=>{
 });
 document.querySelectorAll('#pages button[data-p]').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('#pages button').forEach(x=>x.classList.toggle('on',x===b));
-  fr.src=mfr.src=b.dataset.p;document.getElementById('open').href=b.dataset.p;document.getElementById('notes').href=b.dataset.p+'?notes=1';
+  fr.src=mfr.src=b.dataset.p;document.getElementById('open').href=b.dataset.p;
 });
 </script>
 </body>
