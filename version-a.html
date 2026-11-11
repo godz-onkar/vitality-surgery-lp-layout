@@ -394,6 +394,40 @@
 
 /* one featured story: full width */
 .vt2 .feat > .rv.lead:only-child{grid-column:1/-1}
+
+/* Layout and build notes under the page (public preview only) */
+.bn{background:#132536;color:#E9EEF3;font-family:Inter,system-ui,sans-serif;font-size:15.5px;line-height:1.55;padding:clamp(48px,6vw,80px) 0}
+.bn-in{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.bn-k{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#9FC3D8;margin:0}
+.bn h2{font-family:"Libre Caslon Text",Georgia,serif;font-weight:400;font-size:clamp(28px,3.2vw,40px);line-height:1.15;color:#fff;margin:10px 0 0}
+.bn-lede{max-width:70ch;margin:14px 0 0;color:#C9D5E0}
+.bn h3{font-size:18px;font-weight:600;color:#fff;margin:44px 0 14px;padding-top:20px;border-top:1px solid rgba(255,255,255,.14)}
+.bn a{color:#9FD3F0;text-decoration:underline;text-underline-offset:2px;word-break:break-word}
+.bn a:hover{color:#fff}
+.bn-dl{display:grid;grid-template-columns:150px 1fr;gap:10px 24px;margin:0}
+.bn-dl dt{font-weight:600;color:#fff}
+.bn-dl dd{margin:0;color:#C9D5E0}
+.bn-t{overflow-x:auto}
+.bn table{width:100%;border-collapse:collapse;font-size:14.5px}
+.bn thead th{text-align:left;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#9FC3D8;padding:0 14px 10px 0;border-bottom:1px solid rgba(255,255,255,.22)}
+.bn tbody th,.bn tbody td{text-align:left;vertical-align:top;padding:12px 14px 12px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.bn tbody th{font-weight:600;color:#fff;width:20%}
+.bn tbody td{color:#C9D5E0}
+.bn-lock{display:inline-block;font-size:13px;font-weight:600;color:#132536;background:#E9C46A;border-radius:999px;padding:2px 10px}
+.bn-small{font-size:13.5px;color:#9FB3C4;margin:12px 0 0;max-width:80ch}
+.bn-ul{margin:0;padding-left:20px;color:#C9D5E0}
+.bn-ul li{margin:6px 0}
+@media(max-width:720px){
+  .bn{font-size:16px}
+  .bn-dl{grid-template-columns:1fr;gap:2px 0}
+  .bn-dl dd{margin-bottom:12px}
+  .bn table,.bn tbody,.bn tr,.bn th,.bn td{display:block;width:100%}
+  .bn thead{display:none}
+  .bn tbody tr{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+  .bn tbody th,.bn tbody td{border:0;padding:3px 0;width:auto}
+  .bn tbody th{font-size:16px;margin-bottom:4px}
+  .bn tbody td::before{content:attr(data-l) ": ";font-weight:600;color:#9FC3D8}
+}
 </style></head><body>
 <div class="vt2" id="vt2-2">
 <header class="hdr"><div class="wrap hdr-in"><a class="logo" href="#top" aria-label="Vitality Orthopedics and Biologics, back to top"><img src="https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/69d02229811eafe3c1bb15d3.png" alt="Vitality Orthopedics &amp; Biologics" width="172" height="34"></a><div style="display:flex;align-items:center;gap:clamp(8px,2vw,24px)"><a class="call" href="tel:+18607353744" aria-label="Call (860) 735-3744"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><span class="call-n">(860) 735-3744</span></a><a class="btn btn-sm hide-sm" href="#check" data-nearest>See if you’re a fit</a></div></div></header>
@@ -507,6 +541,44 @@
 </div></div></footer>
 <div class="mbar"><a class="btn btn-full" href="#check" data-nearest>See if you’re a fit</a></div>
 </div>
+
+<section class="bn" aria-labelledby="bn-h"><div class="bn-in">
+<p class="bn-k">Build notes · Meta version A</p>
+<h2 id="bn-h">Layout and build notes</h2>
+<p class="bn-lede">Everything needed to build this page in GHL: page settings, every file with its link, the layout section by section, and how the buttons behave. The page above is the reference for spacing and type.</p>
+
+<h3>Page settings</h3>
+<dl class="bn-dl">
+<dt>URL</dt><dd>vitalityjointrelief.com/vt-expert-care. Replaces the current content of the live Meta surgery page. /surgery-page carries the same copy.</dd>
+<dt>Page title</dt><dd>Knee and Shoulder Surgery with Dr. Ziegler</dd>
+<dt>Description</dt><dd>Self-pay knee and shoulder surgery with Dr. Connor Ziegler, a board-certified orthopedic surgeon in Simsbury. Your recovery is planned before surgery day.</dd>
+<dt>Search engines</dt><dd>noindex, follow</dd>
+<dt>Build</dt><dd>Same as the live page: one Custom HTML element on a full-width section with zero padding.</dd>
+<dt>Copy</dt><dd>Word for word from vitality-surgery-meta-page-copy-2026-11-11.md in the vault. This page matches it.</dd>
+</dl>
+
+<h3>Files: every photo and video</h3>
+<div class="bn-t"><table><thead><tr><th>Item</th><th>Where</th><th>File</th><th>Notes</th></tr></thead><tbody><tr><th scope="row">Logo</th><td data-l="Where">Header, top left</td><td data-l="File"><a href="https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/69d02229811eafe3c1bb15d3.png" target="_blank" rel="noopener">Open logo (PNG)</a></td><td data-l="Notes">Shown at 172 × 34. Links back to the top of the page.</td></tr><tr><th scope="row">Dr. Ziegler VSL</th><td data-l="Where">Hero, under the subhead</td><td data-l="File"><a href="https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedc5a8fb31f444f26ce52f.mp4" target="_blank" rel="noopener">Open video (MP4, 2:26, 1920 × 1080)</a></td><td data-l="Notes">The same video as the live page. Framed, with the caption “Watch Dr. Connor Ziegler” under it. Clicking the caption plays it too.</td></tr><tr><th scope="row">VSL thumbnail</th><td data-l="Where">Hero, before the video plays</td><td data-l="File"><a href="https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedd7398c8c37bd905657d2.jpg" target="_blank" rel="noopener">Open thumbnail (JPG, 1920 × 1080)</a></td><td data-l="Notes">The live page’s current thumbnail. Swap in a clean one if Rabih makes it.</td></tr><tr><th scope="row">Doctor photo, small</th><td data-l="Where">Hero, the doctor strip under the video</td><td data-l="File"><a href="https://www.vitalityorthopedics.com/wp-content/uploads/2026/05/Dr.-Connor-Ziegler.jpg" target="_blank" rel="noopener">Open photo (JPG)</a></td><td data-l="Notes">Cropped to a circle next to “Connor Ziegler, MD.”</td></tr><tr><th scope="row">Doctor portrait</th><td data-l="Where">Meet Dr. Connor Ziegler</td><td data-l="File"><a href="https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6a7f6c93cf50f900f2edb226.png" target="_blank" rel="noopener">Open portrait (PNG)</a></td><td data-l="Notes">Left column on desktop, square on phones.</td></tr><tr><th scope="row">Patient video 1</th><td data-l="Where">What patients say · Rotator cuff repair · Shoulder filter</td><td data-l="File"><span class="bn-lock">Drive link in the team build notes</span></td><td data-l="Notes">Needs the edited, captioned clip and a signed release before it goes live. Name and quote are in the copy doc.</td></tr><tr><th scope="row">Patient video 2</th><td data-l="Where">What patients say · Knee arthroscopy, 3 weeks after surgery · Knee filter</td><td data-l="File"><span class="bn-lock">Drive link in the team build notes</span></td><td data-l="Notes">Needs the edited, captioned clip and a signed release before it goes live. Name and quote are in the copy doc.</td></tr><tr><th scope="row">Patient video 3</th><td data-l="Where">What patients say · Shoulder labral repair · Shoulder filter</td><td data-l="File"><span class="bn-lock">Drive link in the team build notes</span></td><td data-l="Notes">Needs the edited, captioned clip and a signed release before it goes live. Name and quote are in the copy doc.</td></tr><tr><th scope="row">Patient video 4</th><td data-l="Where">What patients say · Shoulder reconstruction, 8 months after surgery · Shoulder filter</td><td data-l="File"><span class="bn-lock">Drive link in the team build notes</span></td><td data-l="Notes">Needs the edited, captioned clip and a signed release before it goes live. Name and quote are in the copy doc.</td></tr><tr><th scope="row">Google “G” and stars</th><td data-l="Where">Google review cards and the reviews header</td><td data-l="File">Built into the code (SVG)</td><td data-l="Notes">No file to upload.</td></tr><tr><th scope="row">Fonts</th><td data-l="Where">Whole page</td><td data-l="File"><a href="https://fonts.google.com/specimen/Libre+Caslon+Text" target="_blank" rel="noopener">Libre Caslon Text</a> · <a href="https://fonts.google.com/specimen/Inter" target="_blank" rel="noopener">Inter</a></td><td data-l="Notes">Same as the live page: Caslon for headings, Inter for everything else.</td></tr><tr><th scope="row">Survey</th><td data-l="Where">Hero (right on desktop) and See if you’re a fit</td><td data-l="File">The surgery survey already on the live page</td><td data-l="Notes">Its last button reads “Show me available times.” The preview shows a stand-in first question.</td></tr><tr><th scope="row">Meta pixel</th><td data-l="Where">Whole page</td><td data-l="File">Same pixel as the live page</td><td data-l="Notes">Lead fires on the survey submit, as it does now.</td></tr></tbody></table></div>
+<p class="bn-small">The four patient-video links are in the team build notes in GuidepostOS (Vitality › direct-pay surgery › page A build notes). They aren’t posted here because the Drive files are open to anyone with the link.</p>
+
+<h3>Layout, section by section</h3>
+<div class="bn-t"><table><thead><tr><th>Section</th><th>Desktop</th><th>Phone</th></tr></thead><tbody><tr><th scope="row">1. Header</th><td data-l="Desktop">Logo left. Phone number and the “See if you’re a fit” button right.</td><td data-l="Phone">Logo and a phone icon. The number shows on screens wider than 380px. No button here; the sticky bar covers it.</td></tr><tr><th scope="row">2. Hero</th><td data-l="Desktop">Two columns. Left: eyebrow, question line, headline, subhead, the framed VSL with its caption, “Individual results vary.”, the doctor strip. Right: the survey card, which stays in view while the left column scrolls. The three trust lines run full width under both.</td><td data-l="Phone">One column, in this order: copy, video, doctor strip, trust lines, survey card.</td></tr><tr><th scope="row">3. The usual route</th><td data-l="Desktop">Heading on the left stays pinned while the six rows scroll on the right. Closing line under the rows.</td><td data-l="Phone">Heading, rows, closing line.</td></tr><tr><th scope="row">4. What surgery with Dr. Ziegler looks like</th><td data-l="Desktop">Grey band. Heading pinned on the left. Right: the four bullets, the procedures block, then the three numbered steps and a button.</td><td data-l="Phone">Heading, bullets, procedures block, steps, button.</td></tr><tr><th scope="row">5. Meet Dr. Connor Ziegler</th><td data-l="Desktop">Portrait left, bio and the two credential lines right.</td><td data-l="Phone">Portrait on top, then the bio.</td></tr><tr><th scope="row">6. What patients say</th><td data-l="Desktop">Filter tabs (All, Knee, Shoulder). Four patient videos in a row. Charlie’s story full width. Then the “Google reviews 4.9 · 400+ reviews” header and five Google-style cards. Disclaimer last.</td><td data-l="Phone">Videos two across. Reviews stacked; three show and “Show more reviews” opens the rest. Tapping a filter tab opens them all.</td></tr><tr><th scope="row">7. See if you’re a fit</th><td data-l="Desktop">Heading, lede and the call details on the left; the survey on the right.</td><td data-l="Phone">Heading, lede, call details, then the survey.</td></tr><tr><th scope="row">8. Not the right fit</th><td data-l="Desktop">Four lines, each with a bold lead and a plain follow-on.</td><td data-l="Phone">Same, stacked.</td></tr><tr><th scope="row">9. Questions people ask</th><td data-l="Desktop">Heading pinned on the left, six questions that open and close on the right.</td><td data-l="Phone">Heading, then the questions.</td></tr><tr><th scope="row">10. Final call to action</th><td data-l="Desktop">Centred heading, lede and one button.</td><td data-l="Phone">Same.</td></tr><tr><th scope="row">11. Footer</th><td data-l="Desktop">Name, address and phone left. Privacy Policy link, “Same-week appointments are offered when the schedule allows.”, the legal line and © right. There is no Terms page on vitalityorthopedics.com, so only Privacy Policy is linked.</td><td data-l="Phone">Stacked.</td></tr><tr><th scope="row">12. Sticky bar</th><td data-l="Desktop">None.</td><td data-l="Phone">A “See if you’re a fit” bar sits at the bottom from the first screen. It hides while either survey is on screen.</td></tr></tbody></table></div>
+
+<h3>How the page behaves</h3>
+<ul class="bn-ul">
+<li>Every “See if you’re a fit” button goes to the nearest survey: the hero survey while the reader is above the reviews, the bottom survey from the reviews on.</li>
+<li>On desktop the hero survey card and the left-hand headings stay in view while their section scrolls.</li>
+<li>The filter tabs show knee or shoulder stories only. Each video and review carries a knee or shoulder tag.</li>
+<li>Adding ?seg=knee or ?seg=shoulder to the URL changes the question line to “Has a doctor recommended knee surgery?” or “Has a doctor recommended shoulder surgery?”</li>
+<li>The phone number in the header and footer is a click-to-call link: (860) 735-3744.</li>
+</ul>
+
+<h3>Before it goes live</h3>
+<ul class="bn-ul">
+<li>Signed releases and edited, captioned clips for the four patient videos.</li>
+<li>Check the page on a phone and a laptop: no sideways scroll, the survey loads in both places, the sticky bar hides over each survey.</li>
+</ul>
+</div></section>
 <script>window.VT2={"page": "surgery-a", "door": "2", "seg": {"default": {"pre": "Has a doctor recommended knee or shoulder surgery?", "finalH": "Get your price and your recovery plan before you decide."}, "knee": {"pre": "Has a doctor recommended knee surgery?", "finalH": "Get your price and your recovery plan before you decide."}, "shoulder": {"pre": "Has a doctor recommended shoulder surgery?", "finalH": "Get your price and your recovery plan before you decide."}}, "video": {"url": "https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedc5a8fb31f444f26ce52f.mp4", "poster": "https://assets.cdn.filesafe.space/jiPCbKw8uU8D9i3iQhpb/media/6aedd7398c8c37bd905657d2.jpg", "still": "https://www.vitalityorthopedics.com/wp-content/uploads/2026/05/Dr.-Connor-Ziegler.jpg"}};</script><script>/* Vitality two-door funnel · shared page script. Each page sets window.VT2 = {...} before this runs. */
 (function () {
   'use strict';
